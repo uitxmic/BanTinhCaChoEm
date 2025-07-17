@@ -1,10 +1,11 @@
 import React from 'react';
 
 const albumImages = [
-    '/images/album1.jpg',
-    '/images/album2.jpg',
-    '/images/album3.jpg',
-    // Thêm đường dẫn ảnh của bạn vào đây
+    '/images/IMG_4535.PNG',
+    '/images/IMG_5406.PNG',
+    '/images/IMG_5412.PNG',
+    '/images/IMG_5593.PNG',
+    '/images/IMG_5594.PNG',
 ];
 
 const ThankYou: React.FC<{ onBack: () => void }> = ({ onBack }) => (
@@ -33,18 +34,24 @@ const ThankYou: React.FC<{ onBack: () => void }> = ({ onBack }) => (
                 ← Quay lại Timeline
             </button>
         </div>
-        <div className="mt-12 max-w-3xl w-full">
+        <div className="mt-12 max-w-5xl w-full">
             <h2 className="text-3xl font-bold text-green-400 mb-6 text-center font-[Roboto,Segoe UI,Arial,sans-serif] drop-shadow-lg bg-gradient-to-r from-green-300 to-green-500 text-transparent bg-clip-text">
                 Album Kỷ Niệm
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                 {albumImages.map((src, idx) => (
-                    <img
-                        key={idx}
-                        src={src}
-                        alt={`Kỷ niệm ${idx + 1}`}
-                        className="w-full h-48 object-cover rounded-2xl shadow-xl border-2 border-green-200 hover:border-green-400 transition duration-300 transform hover:scale-105"
-                    />
+                    <div key={idx} className="relative group">
+                        <img
+                            src={src}
+                            alt={`Kỷ niệm ${idx + 1}`}
+                            className="w-full h-24 sm:h-28 md:h-32 object-cover rounded-lg shadow-md border border-green-200 hover:border-green-400 transition duration-300 transform hover:scale-105 group-hover:shadow-lg"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-lg flex items-center justify-center">
+                            <span className="text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition duration-300">
+                                {idx + 1}
+                            </span>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
