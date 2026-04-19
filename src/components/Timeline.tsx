@@ -117,28 +117,28 @@ const MobileTimelineSlide = ({ index, total, moment, activeId, onVisible }: Mobi
             ))}
           </div>
 
-          <h3 className="mt-4 font-title text-4xl leading-none text-white">
+          <h3 className="mobile-story-title">
             {moment.title}
           </h3>
 
-          <p className="mt-4 text-sm leading-7 text-white/86">
+          <p className="mobile-story-description">
             {moment.description}
           </p>
 
           {moment.quote?.trim() ? (
-            <blockquote className="mt-5 border-l border-white/30 pl-4 text-sm italic leading-7 text-white/76">
+            <blockquote className="mobile-story-quote">
               “{moment.quote}”
             </blockquote>
           ) : null}
 
           {featuredMedia?.caption ? (
-            <p className="mt-5 rounded-[20px] bg-white/10 px-4 py-3 text-xs leading-6 text-white/78 backdrop-blur-md">
+            <p className="mobile-story-caption">
               {featuredMedia.caption}
             </p>
           ) : null}
 
           {secondaryMedia.length ? (
-            <div className="mt-5 flex gap-3 overflow-x-auto pb-1">
+            <div className="mobile-story-gallery">
               {secondaryMedia.map((media) => (
                 <figure key={`${moment.id}-${media.src}`} className="mobile-story-thumb">
                   {media.type === 'video' ? (
@@ -291,7 +291,7 @@ const Timeline = ({ onBackClick, onOpenSecret }: TimelineProps) => {
                     Chương cuối là một chiếc phong bì
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-white/80">
-                    Khi vuốt tới đây, người dùng sẽ biết câu chuyện vẫn còn một lớp bí mật phía sau. Bấm vào nút bên dưới để mở lá thư riêng.
+                    Vẫn còn một chương nữa, em hãy tiếp tục tìm hiểu để mở ra nó nhé. Đây sẽ là một phần rất đặc biệt mà anh đã chuẩn bị riêng cho em.
                   </p>
 
                   <div className="mt-6 flex flex-col gap-3">
@@ -457,8 +457,7 @@ const Timeline = ({ onBackClick, onOpenSecret }: TimelineProps) => {
                 {coupleStory.title} vẫn còn một đoạn kết riêng
               </h3>
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700/80 sm:text-lg">
-                Timeline dừng lại ở đây để nhường sân cho một chiếc phong bì thư bí mật. Nó là phần thay thế hoàn toàn cho trang
-                Thank You cũ và tạo cảm giác unlock rõ ràng hơn.
+                Timeline dừng lại ở đây để nhường sân cho một chiếc phong bì thư bí mật.
               </p>
             </div>
 
