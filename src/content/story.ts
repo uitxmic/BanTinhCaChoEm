@@ -141,16 +141,16 @@ export const timelineMoments: TimelineMoment[] = [
     accent: '#f97316',
     media: [
       {
-        type: 'image',
-        src: '/images/6month.JPG',
-        alt: 'Kỷ niệm một năm yêu nhau',
-        caption: 'Ảnh này là ảnh 6 tháng, bữa đó là cũng đi ăn thịt nướng.',
-      },
-      {
         type: 'video',
         src: '/videos/1year.MOV',
         alt: 'Khoảnh khắc của ngày kỷ niệm một năm',
         caption: 'Đi xem pháo hoa tiếp tục.',
+      },
+      {
+        type: 'image',
+        src: '/images/6month.JPG',
+        alt: 'Kỷ niệm một năm yêu nhau',
+        caption: 'Ảnh này là ảnh 6 tháng, bữa đó là cũng đi ăn thịt nướng.',
       },
     ],
   },
@@ -207,7 +207,29 @@ export const timelineMoments: TimelineMoment[] = [
       }
     ]
    },
-
+   {
+    id: 'lunar-new-year',
+    date: '09.02.2025',
+    title: 'Tết Nguyên đán 2025',
+    location: 'Trường của tụi mình',
+    description:
+      'Một dịp đặc biệt để sum vầy bên nhau và bắt đầu một năm mới.',
+    quote: 'Tết là dịp để yêu thương được lan tỏa và những kỷ niệm được tạo ra.',
+    tags: ['Lunar New Year', 'Family', 'Special day'],
+    accent: '#10b981',
+    media: [
+      {
+        type: 'image',
+        src: '/images/tet.JPG',
+        alt: 'Kỷ niệm Tết Nguyên đán 2025',
+      },
+      {
+        type: 'image',
+        src: '/images/tettet.JPG',
+        alt: 'Kỷ niệm Tết Nguyên đán 2025',
+      }
+    ]
+   }
 ];
 
 export const secretPasscode = '191105';
