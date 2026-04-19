@@ -229,6 +229,23 @@ export const timelineMoments: TimelineMoment[] = [
         alt: 'Kỷ niệm Tết Nguyên đán 2025',
       }
     ]
+   },
+   {
+    id: 'happy-women-day',
+    date: '08.03.2025',
+    title: 'Ngày Phụ nữ Việt Nam',
+    location: 'Gua Bao',
+    description:
+      'Tụi mình đi ăn đồ Trung Quốc cùng nhau, anh không ăn chân gà nhưng em thích món đó, anh cuối cùng cũng ăn được và thấy ngonn.',
+    tags: ['Women\'s Day', 'Love', 'Special day'],
+    accent: '#8b5cf6',
+    media: [
+      {
+        type: 'image',
+        src: '/images/happywomensday.jpg',
+        alt: 'Kỷ niệm Ngày Phụ nữ Việt Nam',
+      }
+    ]
    }
 ];
 
@@ -242,7 +259,9 @@ export const secretLetter = {
   paragraphs: [
     'Gửi em, cảm ơn em vì đã bước vào cuộc sống của anh theo một cách rất dịu dàng nhưng đủ để làm mọi thứ khác đi từng chút một.',
     'Ở bên em, những ngày bình thường cũng trở nên đáng nhớ hơn. Anh thích cảm giác được đi cùng em qua những niềm vui nhỏ, những lúc mệt, những lúc cười rất nhiều và cả những khoảnh khắc chỉ cần im lặng cạnh nhau.',
-    'Nếu sau này mình đọc lại lá thư này, anh vẫn muốn giữ nguyên điều đơn giản nhất: anh trân trọng hành trình của hai đứa và mong tụi mình sẽ còn viết thêm thật nhiều chương đẹp nữa.',
+    'Có những lúc anh im lặng không phải vì anh không nhớ em hay không muốn nói chuyện, anh chỉ đang cố gắng làm hết sức mình để khi gặp em anh sẽ có nhiều thứ để kể em nghe, anh cũng sẽ tốt hơn để xứng đáng với những điều tốt đẹp mà em mang đến cho anh.',
+    'Xin lỗi vì có những lúc anh không thể hiện được hết những gì anh muốn nói, nhưng anh hy vọng em biết rằng trong lòng anh luôn có một góc rất đặc biệt dành cho em, yêu em rất nhiều',
+    'Hy vọng là sau này, càng lâu về sau này nữa, sẽ có nhiều bữa như hôm nay, tụi mình sẽ lại ăn anni với nhau, ăn những món mà mình chưa từng ăn bao giờ, rồi mình sẽ kể cho nhau nghe về những điều đã xảy ra trong khoảng thời gian đó, rồi mình sẽ lại có thêm nhiều kỷ niệm mới để nhớ về sau này nữa.',
   ],
   signature: 'Thương em, Minh Khôi',
 };
