@@ -127,6 +127,17 @@ const SecretLetter = ({ onBack, onReturnHome }: SecretLetterProps) => {
     clearDigits();
   };
 
+  const toggleEnvelope = () => {
+    setIsEnvelopeOpen((currentState) => !currentState);
+  };
+
+  const handleEnvelopeKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleEnvelope();
+    }
+  };
+
   return (
     <section className="px-4 py-6 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-6xl">
@@ -255,7 +266,7 @@ const SecretLetter = ({ onBack, onReturnHome }: SecretLetterProps) => {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <button
                     type="button"
-                    onClick={() => setIsEnvelopeOpen((currentState) => !currentState)}
+                    onClick={toggleEnvelope}
                     className="primary-button"
                   >
                     {isEnvelopeOpen ? 'Đóng phong bì' : 'Mở phong bì'}
@@ -272,13 +283,15 @@ const SecretLetter = ({ onBack, onReturnHome }: SecretLetterProps) => {
 
               <div className="story-panel rounded-[34px] p-6 sm:p-8">
                 <div className="envelope-scene">
-                  <button
-                    type="button"
+                  <div
+                    role="button"
+                    tabIndex={0}
                     aria-pressed={isEnvelopeOpen}
-                    onClick={() => setIsEnvelopeOpen((currentState) => !currentState)}
+                    onClick={toggleEnvelope}
+                    onKeyDown={handleEnvelopeKeyDown}
                     className={`envelope-shell ${isEnvelopeOpen ? 'is-open' : ''}`}
                   >
-                    <div className="letter-sheet">
+                    <div className="letter-sheet" onClick={(event) => event.stopPropagation()}>
                       <p className="letter-overline">{secretLetter.overline}</p>
                       <h3 className="letter-title">{secretLetter.title}</h3>
                       {secretLetter.paragraphs.map((paragraph) => (
@@ -292,7 +305,7 @@ const SecretLetter = ({ onBack, onReturnHome }: SecretLetterProps) => {
                     <div className="envelope-back" />
                     <div className="envelope-flap" />
                     <div className="envelope-front" />
-                  </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

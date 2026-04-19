@@ -228,22 +228,6 @@
   position: relative;
 }
 
-.mobile-timeline-actions {
-  position: fixed;
-  top: max(0.9rem, env(safe-area-inset-top));
-  left: 0;
-  right: 0;
-  z-index: 40;
-  display: flex;
-  justify-content: center;
-  padding-inline: 1rem;
-  pointer-events: none;
-}
-
-.mobile-timeline-actions > * {
-  pointer-events: auto;
-}
-
 .mobile-timeline-feed {
   height: 100svh;
   overflow-y: auto;
@@ -524,14 +508,20 @@
 
 .envelope-shell {
   position: relative;
+  display: block;
   width: min(100%, 520px);
   height: min(74vw, 430px);
   min-height: 360px;
-  border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
   perspective: 1600px;
+}
+
+.envelope-shell:focus-visible {
+  outline: 3px solid rgba(244, 114, 182, 0.45);
+  outline-offset: 12px;
+  border-radius: 2rem;
 }
 
 .letter-sheet,
@@ -557,7 +547,10 @@
     0 18px 30px rgba(148, 163, 184, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.74);
   padding: 1.7rem 1.5rem;
-  overflow: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 1;
 }
@@ -690,9 +683,44 @@
     font-size: 1.45rem;
   }
 
+  .envelope-stage,
+  .envelope-scene {
+    min-height: 430px;
+  }
+
+  .envelope-shell {
+    width: min(100%, 30rem);
+    height: min(118vw, 34rem);
+    min-height: 430px;
+  }
+
   .letter-sheet {
-    width: calc(100% - 2.4rem);
-    height: calc(100% - 5rem);
-    padding: 1.3rem 1.15rem;
+    bottom: 1.15rem;
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 3.25rem);
+    border-radius: 1.5rem;
+    padding: 1.5rem 1.2rem 1.85rem;
+  }
+
+  .letter-overline {
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+  }
+
+  .letter-title {
+    margin-top: 0.85rem;
+    font-size: clamp(2.1rem, 9vw, 2.7rem);
+    line-height: 1;
+  }
+
+  .letter-paragraph {
+    margin-top: 1.05rem;
+    font-size: 1.03rem;
+    line-height: 1.82;
+  }
+
+  .letter-signature {
+    margin-top: 1.6rem;
+    font-size: 0.98rem;
   }
 }

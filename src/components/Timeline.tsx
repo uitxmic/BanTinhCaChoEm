@@ -187,15 +187,6 @@ const Timeline = ({ onBackClick, onOpenSecret }: TimelineProps) => {
     <section className="lg:px-10 lg:py-6">
       <div className="mx-auto max-w-6xl">
         <div className="mobile-timeline-shell lg:hidden">
-          <div className="mobile-timeline-actions">
-            <button type="button" onClick={onBackClick} className="ghost-button">
-              Trang đầu
-            </button>
-            <button type="button" onClick={onOpenSecret} className="primary-button">
-              Thư bí mật
-            </button>
-          </div>
-
           <div className="mobile-timeline-feed">
             <section
               ref={activeIntroRef}
@@ -335,10 +326,6 @@ const Timeline = ({ onBackClick, onOpenSecret }: TimelineProps) => {
               <h2 className="mt-4 font-title text-5xl leading-none text-slate-900 sm:text-6xl">
                 Timeline bây giờ là một story experience
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700/80 sm:text-lg">
-                Thay vì các card nhỏ đơn điệu, mỗi mốc giờ là một chương riêng với không gian lớn hơn, text nhiều chiều hơn
-                và phần media sẵn sàng để nhúng ảnh hoặc video khi bạn bổ sung dữ liệu thật.
-              </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
@@ -346,14 +333,6 @@ const Timeline = ({ onBackClick, onOpenSecret }: TimelineProps) => {
                 <p className="text-xs uppercase tracking-[0.32em] text-slate-500/72">Chapters</p>
                 <p className="mt-3 text-3xl font-bold text-slate-900">{timelineMoments.length}</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600/75">Mỗi mốc đều có phần mô tả, quote, tags và gallery.</p>
-              </div>
-
-              <div className="rounded-[28px] bg-slate-950 p-5 text-white shadow-[0_20px_50px_rgba(15,23,42,0.28)]">
-                <p className="text-xs uppercase tracking-[0.32em] text-white/55">Media ready</p>
-                <p className="mt-3 text-xl font-semibold">Ảnh và video đều dùng được</p>
-                <p className="mt-2 text-sm leading-6 text-white/72">
-                  Thêm file vào <code>public/images</code> hoặc <code>public/videos</code>, rồi cập nhật <code>src/content/story.ts</code>.
-                </p>
               </div>
             </div>
           </div>
